@@ -22,12 +22,12 @@ let LAST_CHECKED;
 			image = hit.cover;
 		} else {
 			const mangaData = await fetch.get(`https://mangadex.org/api/manga/${chapterData.manga_id}`);
-			image = await cloudinary.v2.uploader.upload(`https://mangadex.org${mangaData.manga.cover_url}`);
+			image = (await cloudinary.v2.uploader.upload(`https://mangadex.org${mangaData.manga.cover_url}`)).secure_url;
 
 			await cache.set(chapterData.manga_id, {
 				title: mangaData.title,
 				mangaId: chapterData.manga_id,
-				cover: image.secure_url
+				cover: image
 			});
 		}
 
@@ -36,7 +36,7 @@ let LAST_CHECKED;
 			link: item.link,
 			content: item.content,
 			isoDate: item.isoDate,
-			cover: image.secure_url
+			cover: image
 		};
 	}));
 	if (filtered.length) {
