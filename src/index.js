@@ -39,7 +39,10 @@ let LAST_CHECKED;
 			cover: image.secure_url
 		};
 	}));
-	LAST_CHECKED = filtered.length ? filtered[0].isoDate : LAST_CHECKED;
+	if (filtered.length) {
+		await cache.set('last_checked', filtered[0].isoDate);
+		LAST_CHECKED = filtered[0].isoDate;
+	}
 	logger.info(`Set new last checked to: ${LAST_CHECKED}`);
 
 	if (process.env.NODE_ENV !== 'test') {
