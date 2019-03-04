@@ -19,7 +19,7 @@ Prerequisites:
 - - Cloudinary is used to reupload the volume covers to our own image host for caching
 
 First you need to make sure `Portland` is running, how that is done is up to the user itself, whether it be tmux, screen, pm2 or Docker.  
-The configuration for the env, rss feed, port, Discord webhook and cloudinary is handled via environment variables, namely: `NODE_ENV=`, `PORT=`, `MAGADEX_RSS=`, `CLOUDINARY_URL=`, `DISCORD_WEBHOOK=`
+The configuration for the env, rss feed, port, Discord webhook and cloudinary is handled via environment variables, namely: `NODE_ENV=`, `PORT=`, `MANGADEX_RSS=`, `CLOUDINARY_URL=`, `DISCORD_WEBHOOK=`
 
 (`CLOUDINARY_URL` consists of `cloudinary://api_key:secret@username`)
 
