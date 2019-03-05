@@ -10,19 +10,37 @@ const cache = new Keyv('sqlite://cache.db', { namespace: 'cache' });
 let LAST_CHECKED;
 
 (async function checkRSS() {
-	const feed = await parser.parseURL(process.env.MANGADEX_RSS);
+	let feed;
+	try {
+		feed = await parser.parseURL(process.env.MANGADEX_RSS);
+		return setTimeout(checkRSS, 600000);
+	} catch (error) {
+		logger.error(error);
+	}
 	LAST_CHECKED = await cache.get('last_checked') || feed.items[0].isoDate;
 	logger.info(`Running RSS for: ${LAST_CHECKED}`);
 	const filtered = await Promise.all(feed.items.filter(item => new Date(LAST_CHECKED) < new Date(item.isoDate)).map(async item => {
-		const chapterData = await fetch.get(`https://mangadex.org/api/chapter/${item.link.match(/\d+/)[0]}`);
+		let chapterData;
+		try {
+			chapterData = await fetch.get(`https://mangadex.org/api/chapter/${item.link.match(/\d+/)[0]}`);
+			return setTimeout(checkRSS, 600000);
+		} catch (error) {
+			logger.error(error);
+		}
 
 		const hit = await cache.get(chapterData.manga_id);
 		let image;
 		if (hit) {
 			image = hit.cover;
 		} else {
-			const mangaData = await fetch.get(`https://mangadex.org/api/manga/${chapterData.manga_id}`);
-			image = (await cloudinary.v2.uploader.upload(`https://mangadex.org${mangaData.manga.cover_url}`)).secure_url;
+			let mangaData;
+			try {
+				mangaData = await fetch.get(`https://mangadex.org/api/manga/${chapterData.manga_id}`);
+				image = (await cloudinary.v2.uploader.upload(`https://mangadex.org${mangaData.manga.cover_url}`)).secure_url;
+				return setTimeout(checkRSS, 600000);
+			} catch (error) {
+				logger.error(error);
+			}
 
 			await cache.set(chapterData.manga_id, {
 				title: mangaData.title,
@@ -64,5 +82,5 @@ let LAST_CHECKED;
 		}
 	}
 
-	setTimeout(checkRSS, 1200000);
+	return setTimeout(checkRSS, 1200000);
 })();
