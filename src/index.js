@@ -57,11 +57,6 @@ let LAST_CHECKED;
 			cover: image
 		};
 	}));
-	if (filtered.length) {
-		await cache.set('last_checked', filtered[0].isoDate);
-		LAST_CHECKED = filtered[0].isoDate;
-	}
-	logger.info(`Set new last checked to: ${LAST_CHECKED}`);
 
 	if (process.env.NODE_ENV !== 'test') {
 		for (const manga of filtered) {
@@ -81,6 +76,12 @@ let LAST_CHECKED;
 			logger.info(`Sent notification for: ${manga.title}`);
 		}
 	}
+
+	if (filtered.length) {
+		await cache.set('last_checked', filtered[0].isoDate);
+		LAST_CHECKED = filtered[0].isoDate;
+	}
+	logger.info(`Set new last checked to: ${LAST_CHECKED}`);
 
 	return setTimeout(checkRSS, 1200000);
 })();
