@@ -13,9 +13,9 @@ let LAST_CHECKED;
 	let feed;
 	try {
 		feed = await parser.parseURL(process.env.MANGADEX_RSS);
-		return setTimeout(checkRSS, 600000);
 	} catch (error) {
 		logger.error(error);
+		return setTimeout(checkRSS, 600000);
 	}
 	LAST_CHECKED = await cache.get('last_checked') || feed.items[0].isoDate;
 	logger.info(`Running RSS for: ${LAST_CHECKED}`);
@@ -23,9 +23,9 @@ let LAST_CHECKED;
 		let chapterData;
 		try {
 			chapterData = await fetch.get(`https://mangadex.org/api/chapter/${item.link.match(/\d+/)[0]}`);
-			return setTimeout(checkRSS, 600000);
 		} catch (error) {
 			logger.error(error);
+			return;
 		}
 
 		const hit = await cache.get(chapterData.manga_id);
@@ -37,9 +37,9 @@ let LAST_CHECKED;
 			try {
 				mangaData = await fetch.get(`https://mangadex.org/api/manga/${chapterData.manga_id}`);
 				image = (await cloudinary.v2.uploader.upload(`https://mangadex.org${mangaData.manga.cover_url}`)).secure_url;
-				return setTimeout(checkRSS, 600000);
 			} catch (error) {
 				logger.error(error);
+				return;
 			}
 
 			await cache.set(chapterData.manga_id, {
