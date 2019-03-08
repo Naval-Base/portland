@@ -33,7 +33,11 @@ let LAST_CHECKED;
 			chapterData = await fetch.get(`https://mangadex.org/api/chapter/${item.link.match(/\d+/)[0]}`);
 		} catch (error) {
 			logger.error(error);
-			return;
+			try {
+				chapterData = await cloudscraper(`https://mangadex.org/api/chapter/${item.link.match(/\d+/)[0]}`);
+			} catch (err) {
+				return;
+			}
 		}
 
 		const hit = await cache.get(chapterData.manga_id);
@@ -43,7 +47,11 @@ let LAST_CHECKED;
 		} else {
 			let mangaData;
 			try {
-				mangaData = await fetch.get(`https://mangadex.org/api/manga/${chapterData.manga_id}`);
+				try {
+					mangaData = await fetch.get(`https://mangadex.org/api/manga/${chapterData.manga_id}`);
+				} catch (err) {
+					mangaData = await cloudscraper(`https://mangadex.org/api/manga/${chapterData.manga_id}`);
+				}
 				image = (await cloudinary.v2.uploader.upload(`https://mangadex.org${mangaData.manga.cover_url}`)).secure_url;
 			} catch (error) {
 				logger.error(error);
