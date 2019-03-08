@@ -15,6 +15,7 @@
 		"@spectacles/rest": "^0.5.0",
 		"body-parser": "^1.18.3",
 		"cloudinary": "^1.13.2",
+		"cloudscraper": "^3.0.0",
 		"compression": "^1.7.3",
 		"cors": "^2.8.5",
 		"dotenv": "^6.2.0",

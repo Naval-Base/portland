@@ -1,5 +1,6 @@
 require('dotenv').config();
 const fetch = require('@spectacles/rest')('', { tokenType: '' });
+const cloudscraper = require('cloudscraper');
 const logger = require('./logger');
 const Keyv = require('keyv');
 const Parser = require('rss-parser');
@@ -10,12 +11,19 @@ const cache = new Keyv('sqlite://cache.db', { namespace: 'cache' });
 let LAST_CHECKED;
 
 (async function checkRSS() {
+	let res;
 	let feed;
 	try {
 		feed = await parser.parseURL(process.env.MANGADEX_RSS);
 	} catch (error) {
 		logger.error(error);
-		return setTimeout(checkRSS, 600000);
+		try {
+			res = await cloudscraper(process.env.MANGADEX_RSS);
+			feed = await parser.parseString(res);
+		} catch (err) {
+			logger.error(err);
+			return setTimeout(checkRSS, 600000);
+		}
 	}
 	LAST_CHECKED = await cache.get('last_checked') || feed.items[0].isoDate;
 	logger.info(`Running RSS for: ${LAST_CHECKED}`);
