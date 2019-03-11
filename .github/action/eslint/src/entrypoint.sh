@@ -10,4 +10,4 @@ else
 fi
 
 echo "## Running ESLint"
-node /action/eslint/src/index.js
+NODE_PATH=node_modules node /action/eslint/src/index.js
