@@ -3,7 +3,7 @@ const { GITHUB_SHA, GITHUB_EVENT_PATH, GITHUB_TOKEN, GITHUB_WORKSPACE } = proces
 const event = require(GITHUB_EVENT_PATH);
 const { repository: { owner: { login: owner }, name: repo } } = event;
 
-const name = 'ESLint check';
+const name = 'ESLint';
 const headers = {
 	'Content-Type': 'application/json',
 	Accept: 'application/vnd.github.antiope-preview+json',
@@ -88,7 +88,7 @@ async function run() {
 		await update(id, conclusion, output);
 		if (conclusion === 'failure') process.exit(1);
 	} catch (error) {
-		await check(id, 'failure');
+		await update(id, 'failure');
 	}
 }
 
