@@ -28,12 +28,14 @@ async function check() {
 
 function lint() {
 	const eslint = require('eslint');
-	const aqua = require('eslint-config-aqua/node');
-
+	const aqua = require('eslint-config-aqua');
+	const aquaNode = require('eslint-config-aqua/node');
+	aqua.env = aquaNode.env;
 	const cli = new eslint.CLIEngine({
 		extensions: ['.js', '.jsx'],
 		ignorePath: '.gitignore',
-		configFile: aqua
+		baseConfig: aqua,
+		rules: aquaNode.rules
 	});
 	const report = cli.executeOnFiles(['.']);
 	const { results, errorCount, warningCount } = report;
