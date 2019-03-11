@@ -4,6 +4,6 @@ workflow "Commit" {
 }
 
 action "ESLint" {
-	uses = "./action/eslint/",
+	uses = "./.github/action/eslint",
 	secrets = ["GITHUB_TOKEN"]
 }
