@@ -16,5 +16,4 @@ pids
 
 # Miscellaneous
 .tmp/
-.github/
 cache.db
