@@ -2,12 +2,16 @@
 
 set -e
 
-echo "## Installing modules..."
-if [ -f yarn.lock ]; then
-	yarn --production=false
+if [ -e node_modules/.bin/eslint ]; then
+	setup=""
 else
-	NODE_ENV=development npm install
+	echo "## Installing modules..."
+	if [ -f yarn.lock ]; then
+		setup="yarn --production=false &&"
+	else
+		setup="NODE_ENV=development npm install &&"
+	fi
 fi
 
 echo "## Running ESLint"
-NODE_PATH=node_modules node /action/eslint/src/index.js
+sh -c "$setup NODE_PATH=node_modules node /action/eslint/src/index.js"
