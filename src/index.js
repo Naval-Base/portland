@@ -98,7 +98,7 @@ let LAST_CHECKED;
 		LAST_CHECKED = filtered[0].isoDate;
 	} else {
 		await cache.set('last_checked', new Date().toISOString());
-		LAST_CHECKED = new Date().toISOString();
+		LAST_CHECKED = new Date().toISOString()
 	}
 	logger.info(`Set new last checked to: ${LAST_CHECKED}`);
 
