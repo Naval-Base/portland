@@ -10,4 +10,4 @@ else
 fi
 
 echo "## Running ESLint"
-$setup node /action/eslint/src/index.js
+sh -c "$setup node /action/eslint/src/index.js"

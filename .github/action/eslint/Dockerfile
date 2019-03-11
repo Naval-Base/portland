@@ -1,6 +1,6 @@
 FROM node:10-slim
 
-LABEL com.github.actions.name="ESLint Action"
+LABEL com.github.actions.name="ESLint"
 LABEL com.github.actions.description="Lint your Javascript projects with inline lint error annotations."
 LABEL com.github.actions.icon="code"
 LABEL com.github.actions.color="yellow"
