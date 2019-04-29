@@ -631,10 +631,10 @@ cloudinary@^1.14.0:
     lodash "^4.17.11"
     q "^1.5.1"
 
-cloudscraper@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/cloudscraper/-/cloudscraper-3.0.0.tgz#ec0546b720d19d493940fe33212fe18a660b18dc"
-  integrity sha512-dJ7KHUo1YvvOWTIjQ3bOphflvsCyEoZkZzO3vu45Zf/lh4mZBjoVp9X/FVs8QJ+0BPkd0UZgit25kDbRjl9gjA==
+cloudscraper@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/cloudscraper/-/cloudscraper-3.9.1.tgz#ce142a62370d933053cab920566c0c838172746d"
+  integrity sha512-sNN8IjcQkxSYw3UYhiOR4k8IQSMxVuAhSBIm75nkYrV7EGNfOVmlp50HaF2SFYXfQQ/4qIGapd9NozBCErzmrw==
   dependencies:
     request "^2.88.0"
     request-promise "^4.2.4"
