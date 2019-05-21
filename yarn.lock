@@ -1289,10 +1289,10 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-aqua@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-aqua/-/eslint-config-aqua-5.0.0.tgz#f0ed8be7805e86aa389c35f9c3021ba4c51234bd"
-  integrity sha512-cAeVOqDOpuHtr503joLxSfvQ9d/qla0u8GfgB76vhgEQ9wySTj182vK/alimDKOCl4TyN/0UgqMSK3aqq86LUA==
+eslint-config-aqua@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-aqua/-/eslint-config-aqua-6.0.0.tgz#bfc49aaa757864e47c2584f3afcc6253a1c020d4"
+  integrity sha512-zH8/LTjA11ghrelRw5bGSReoz6gDAsSDGUNyy7EP7APkFvzEA0Xvnq+w2mu5R4i8z1g+GILReU0bI2uuDK7jAA==
 
 eslint-scope@^4.0.3:
   version "4.0.3"
