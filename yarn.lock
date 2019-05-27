@@ -3753,10 +3753,10 @@ rimraf@2.6.3, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2:
   dependencies:
     glob "^7.1.3"
 
-rss-parser@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/rss-parser/-/rss-parser-3.7.0.tgz#945d82864678a805558c1de68b52f00adeaacd92"
-  integrity sha512-xN1fwjVxBO0unbrUAOIUK5MAyEaaZTpKWnPY+d3QYigIG4awtbdqxHPOLuOwsTIJFsaKC78nPxIGRJG92p86Hw==
+rss-parser@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/rss-parser/-/rss-parser-3.7.1.tgz#86d15d1c84b860d1aff1c00a2149278a9fe64c0b"
+  integrity sha512-1JKFzLHeteNandmlVBUWgLPmipFEllhdUQlmNvkXd6ju4VFOlGr0VmtlQaxzZoVysG2nbGb8eAtzNqQTxzQ+AQ==
   dependencies:
     entities "^1.1.1"
     xml2js "^0.4.19"
