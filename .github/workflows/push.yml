@@ -1,0 +1,17 @@
+name: Lint commit
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: ESLint
+      uses: iCrawl/eslint-action-marine@master
+      env:
+        FOLDERS: src
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
