@@ -1,5 +1,6 @@
 require('dotenv').config();
-const fetch = require('@spectacles/rest')('', { tokenType: '' });
+const { Rest } = require('@spectacles/rest');
+const fetch = new Rest('', { tokenType: '' });
 const cloudscraper = require('cloudscraper');
 const logger = require('./logger');
 const Keyv = require('keyv');
