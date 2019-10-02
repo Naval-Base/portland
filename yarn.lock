@@ -336,10 +336,10 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-0.5.0.tgz#b21510597fd601e5d7c95008b76bf0d254ebfd31"
   integrity sha512-oZLYFEAzUKyi3SKnXvj32ZCEGH6RDnao7COuCVhDydMS9NrCSVXhM79VaKyP5+Zc33m0QXEd2DN3UkU7OsHcfw==
 
-"@spectacles/rest@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@spectacles/rest/-/rest-0.6.0.tgz#df32fe846a61b9d90945cc8203f3d96ac5f9bdff"
-  integrity sha512-CT9rKAd6bEjS6CODNL3RmfCnwhhiFmy4HVT1eqcvjqdzIUSFKpdwlXg9JktSYYdGDF8Kkg53tDVd97wzt0SKhQ==
+"@spectacles/rest@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@spectacles/rest/-/rest-0.6.1.tgz#258c620bb85b19443ca1a0c27743e85d1f1c0fcc"
+  integrity sha512-to0PJo1ebuqHUqqTDW0XXo3XzbFcybaNkTvrfno6yu76Vmiu2c2rKmCzIovmfPBpfc0OuLfNplBdDFUBzuVafA==
   dependencies:
     form-data "^2.5.0"
     node-fetch "^2.6.0"
