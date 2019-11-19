@@ -10,7 +10,7 @@
 	"license": "UNLICENSED",
 	"private": true,
 	"dependencies": {
-		"@keyv/sqlite": "^2.0.1",
+		"@keyv/sqlite": "^2.0.2",
 		"@polka/send-type": "^0.5.2",
 		"@spectacles/rest": "^0.6.1",
 		"body-parser": "^1.19.0",
