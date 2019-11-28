@@ -869,10 +869,10 @@ cloudinary@^1.17.0:
     q "^1.5.1"
     typescript "^2.9.2"
 
-cloudscraper@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/cloudscraper/-/cloudscraper-4.3.0.tgz#004c748f41a5b6904cccfab05e2838c6b90da513"
-  integrity sha512-2RABir6tWpGAyXomc4jwyP/bipGe9xYP15s73XXVyhmEIK7+OxcQm2FwsvJMvcc1I1nSk+vhFDZK+nX/9xiCnA==
+cloudscraper@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/cloudscraper/-/cloudscraper-4.4.0.tgz#da932d561db5c22fb6d6f518530c909bbadc4ff6"
+  integrity sha512-Rl1gfRlkZLPqYurw5MJ0vdtwCCG0oN/TLLRc3gc6kktFc2pq4SoZWaz48WM2NpBFzRbWHgdQOHq9rSCSLtWzFQ==
   dependencies:
     request-promise "^4.2.4"
 
