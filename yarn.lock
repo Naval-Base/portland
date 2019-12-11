@@ -860,10 +860,10 @@ cliui@^5.0.0:
     strip-ansi "^5.2.0"
     wrap-ansi "^5.1.0"
 
-cloudinary@^1.18.0:
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/cloudinary/-/cloudinary-1.18.0.tgz#7bac49a250cbec1d68d1aeb91b5cd1a61e2693b7"
-  integrity sha512-FqZfbLR8ozVceItlVp2PJn2FMCqYyHuQdxYJJlLr+RKCuRgX+9ng7r4dtl2eQVfn3uxEMZh/hoMr/IPsXu5yFw==
+cloudinary@^1.18.1:
+  version "1.18.1"
+  resolved "https://registry.yarnpkg.com/cloudinary/-/cloudinary-1.18.1.tgz#b2963ce3816d688f5ae17b587d7743af734344ee"
+  integrity sha512-k9ZozOslI68JNQ/1KeS8oU+aezDHZ0+9si8g+5PgvzfYsDILy8s68lnr59rlOO7SogeA7i+eZYFddf1/rN5tBw==
   dependencies:
     lodash "^4.17.11"
     q "^1.5.1"
