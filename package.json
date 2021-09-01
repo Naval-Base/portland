@@ -29,7 +29,7 @@
 		"eslint": "^7.0.0",
 		"eslint-config-aqua": "^9.0.2",
 		"jest": "^27.0.6",
-		"node-fetch": "^2.6.0"
+		"node-fetch": "^3.0.0"
 	},
 	"eslintConfig": {
 		"extends": "aqua/node",
